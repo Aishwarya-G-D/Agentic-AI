@@ -1,0 +1,12 @@
+spec_version: v1
+kind: connection
+app_id: group_2_mainframe_connection
+environments:
+    draft:
+        kind: key_value
+        type: team
+        sso: false
+    live:
+        kind: key_value
+        type: team
+        sso: false

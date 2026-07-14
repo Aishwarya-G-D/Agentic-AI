@@ -1,0 +1,91 @@
+site_name: Mainframe Modernization Summit Handbook 2026
+site_description: Living documentation for the Mainframe Modernization Summit 2026 — Specialist Workshop (Brazil)
+site_author: Workshop Instructor
+copyright: Built with caffeine and presenterm — São Paulo, 2026.
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  custom_dir: docs/overrides
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/console-line
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - scheme: slate
+      primary: black
+      accent: green
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      fallback_to_build_date: true
+      strict: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+not_in_nav: |
+  /404.md
+
+nav:
+  - Home: index.md
+  - "$ setup":
+      - setup/index.md
+      - macOS: setup/macos.md
+      - Windows: setup/windows.md
+      - Verify: setup/verify.md
+      - Environment Connections: setup/mainframe.md
+      - Pull Latest Changes: setup/pull-latest.md
+  - Tutorials:
+      - Hello World: tutorials/hello-world.md
+      - Connect to z/OS: tutorials/connect-to-zos.md
+  - "# challenges":
+      - challenges/index.md
+      - "Challenge 2 — SysOps Foundation": challenges/sysops-foundation.md
+      - "Challenge 3 — Data Analysis": challenges/data-analysis.md
+  - "! troubleshoot":
+      - troubleshooting/index.md
+  - "? reference":
+      - Glossary: reference/glossary.md
+      - "z/OSMF Console API": reference/zosmf-console-api.md
+      - Contacts: reference/contacts.md
+      - Changelog: changelog.md

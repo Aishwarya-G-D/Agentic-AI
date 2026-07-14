@@ -1,0 +1,239 @@
+/* ===========================================================
+   Mainframe Modernization Summit Handbook 2026 — custom theme
+   Terminal / mainframe vibe with a modern edge.
+   =========================================================== */
+
+:root {
+  --tsh-bg: #0E1116;
+  --tsh-bg-elev: #161B22;
+  --tsh-green: #00E37F;
+  --tsh-red: #FF462D;
+  --tsh-amber: #FFB454;
+  --tsh-text: #E6EDF3;
+  --tsh-muted: #8B949E;
+}
+
+/* ---- Palette wiring (dark / slate) ---- */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--tsh-bg);
+  --md-default-fg-color: var(--tsh-text);
+  --md-default-fg-color--light: #C9D1D9;
+  --md-default-fg-color--lighter: #8B949E;
+  --md-code-bg-color: #0B0E12;
+  --md-code-fg-color: #E6EDF3;
+  --md-accent-fg-color: var(--tsh-green);
+  --md-primary-fg-color: var(--tsh-bg);
+  --md-primary-bg-color: var(--tsh-text);
+  --md-typeset-a-color: var(--tsh-green);
+}
+
+/* ---- Body / headings typography ---- */
+body, .md-typeset {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-header__title,
+code, pre, kbd {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.md-typeset h1 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid rgba(0, 227, 127, 0.15);
+  padding-bottom: 0.3em;
+}
+
+/* ---- Header ---- */
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background: var(--tsh-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---- Code block: terminal top bar (● ● ●) ---- */
+.md-typeset pre > code,
+.md-typeset .highlight pre {
+  position: relative;
+}
+
+.md-typeset .highlight {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+
+/* keep the copy button visible above the bar */
+.md-typeset .highlight .md-clipboard {
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+}
+
+/* inline code */
+.md-typeset code {
+  background: rgba(0, 227, 127, 0.08);
+  color: var(--tsh-green);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* ---- Admonitions: recolor warning + danger to Kyndryl red ---- */
+.md-typeset .admonition.warning,
+.md-typeset details.warning,
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: var(--tsh-red);
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary,
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary {
+  background-color: rgba(255, 70, 45, 0.12);
+  border-color: var(--tsh-red);
+}
+
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .warning > summary::before,
+.md-typeset .danger > .admonition-title::before,
+.md-typeset .danger > summary::before {
+  background-color: var(--tsh-red);
+}
+
+/* ---- Hero section (index.md) ---- */
+.tsh-hero {
+  margin: -1.5rem -0.8rem 2rem;
+  padding: 5rem 2rem 4rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 227, 127, 0.12), transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(255, 70, 45, 0.08), transparent 50%),
+    var(--tsh-bg);
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tsh-hero__prompt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.6rem;
+  color: var(--tsh-green);
+  min-height: 4.5rem;
+  margin: 0 0 2rem;
+  line-height: 1.5;
+}
+
+.tsh-hero__cursor {
+  display: inline-block;
+  width: 0.6ch;
+  background: var(--tsh-green);
+  animation: tsh-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes tsh-blink {
+  50% { opacity: 0; }
+}
+
+.tsh-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.tsh-btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid var(--tsh-green);
+  color: var(--tsh-green) !important;
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.tsh-btn:hover {
+  background: rgba(0, 227, 127, 0.1);
+  transform: translateY(-1px);
+}
+
+.tsh-btn--primary {
+  background: var(--tsh-red);
+  border-color: var(--tsh-red);
+  color: #fff !important;
+}
+
+.tsh-btn--primary:hover {
+  background: #e63b22;
+  border-color: #e63b22;
+}
+
+/* ---- 3-card grid ---- */
+.tsh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tsh-card {
+  padding: 1.4rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tsh-card:hover {
+  border-color: var(--tsh-green);
+  transform: translateY(-2px);
+}
+
+.tsh-card h3 {
+  margin-top: 0 !important;
+  color: var(--tsh-green);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  border: none !important;
+}
+
+.tsh-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- ABEND 404 ---- */
+.tsh-abend {
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  background: var(--tsh-bg);
+  border: 2px solid var(--tsh-red);
+  font-family: "JetBrains Mono", monospace;
+}
+
+.tsh-abend h1 {
+  color: var(--tsh-red);
+  border-bottom: none;
+}
+
+/* ---- Footer ---- */
+.md-footer-meta {
+  background: #07090C;
+}
+

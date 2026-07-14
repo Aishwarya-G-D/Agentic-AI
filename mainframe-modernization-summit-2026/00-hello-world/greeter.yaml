@@ -1,0 +1,18 @@
+spec_version: v1
+kind: native
+name: shivamsanjay_greeter
+description: An agent that can greet you and check z/OS system status.
+instructions: |
+  When the user types "Greeting", run the greeting tool.
+  When the user asks about active jobs or system status, run the display active jobs tool.
+llm: virtual-model/openai/ibm-granite/granite-4.1-8b
+style: default
+collaborators: []
+tools:
+  - shivamsanjay_greeting
+  - shivamsanjay_display_active_jobs
+  - shivamsanjay_display_address_space
+  - shivamsanjay_display_spool_utilization
+  - shivamsanjay_display_wtor_messages
+  - shivamsanjay_display_iplinfo
+  - shivamsanjay_display_online_dasd

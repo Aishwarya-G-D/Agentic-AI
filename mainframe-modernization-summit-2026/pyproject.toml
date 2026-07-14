@@ -1,0 +1,21 @@
+[project]
+name = "wxa4z-challenges"
+version = "0.1.0"
+description = "Watsonx Assistant for Z — Workshop Challenges for the Mainframe Modernization Summit 2026"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ibm-watsonx-orchestrate==2.7.0",
+    "requests>=2.33.0",
+    "pydantic>=2.0.0",
+]
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | instances
+)/
+'''
